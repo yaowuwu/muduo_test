@@ -1,0 +1,2 @@
+D:\mingw64\bin\ar.exe qc libmuduo_base.a  CMakeFiles/muduo_base.dir/Timestamp.obj
+D:\mingw64\bin\ranlib.exe libmuduo_base.a

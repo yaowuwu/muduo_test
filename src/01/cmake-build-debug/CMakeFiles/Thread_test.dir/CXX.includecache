@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+F:/c++/muduo/src/01/Thread.cpp
+Thread.h
+F:/c++/muduo/src/01/Thread.h
+
+F:/c++/muduo/src/01/Thread.h
+pthread.h
+-
+
+F:/c++/muduo/src/01/Thread_test.cpp
+Thread.h
+F:/c++/muduo/src/01/Thread.h
+
