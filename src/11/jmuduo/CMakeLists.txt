@@ -7,21 +7,21 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 set(CXX_FLAGS
- -g
+ -g    #调试信息
  # -DVALGRIND
  # -DMUDUO_STD_STRING
- -D_FILE_OFFSET_BITS=64
- -Wall
- -Wextra
- -Werror
- -Wconversion
- -Wno-unused-parameter
+ -D_FILE_OFFSET_BITS=64  #定义一个宏
+ -Wall  #大部分警告
+ -Wextra  #一些额外的警告
+ -Werror  #出现警告时停止编译
+ -Wconversion  #一些可能改变值得隐式转换
+ -Wno-unused-parameter #函数中出现未使用的参数, 不给出警告
  -Wold-style-cast
  -Woverloaded-virtual
  -Wpointer-arith
  -Wshadow
  -Wwrite-strings
- -march=native
+ -march=native  #指定cpu体系结构为本地平台
  # -MMD
  # -std=c++0x
  -rdynamic

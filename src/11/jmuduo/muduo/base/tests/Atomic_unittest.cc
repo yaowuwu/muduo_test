@@ -36,3 +36,32 @@ int main()
   }
 }
 
+
+//原子性无锁队列
+//EnQueue(Q, data) //进队列
+//{
+////准备新加入的结点数据
+//n = new node();
+//n->value = data;
+//n->next = NULL;
+//
+//do {
+//p = Q->tail; //取链表尾指针的快照
+//} while( CAS(p->next, NULL, n) != TRUE);
+////while条件注释：如果没有把结点链在尾指针上，再试
+//
+//CAS(Q->tail, p, n); //置尾结点 tail = n;
+//}
+
+
+
+//原子比较与设置CAS(Q->tail,p,n)  ===>
+//if(p->next = NULL)
+//{
+//    p->next = q;
+//    return TRUE;
+//}
+//else
+//{
+//    return FALSE;
+//}

@@ -82,10 +82,15 @@ class AtomicIntegerT : boost::noncopyable
 
  private:
   volatile T value_;
+  //volatile 确保编译器不会优化该指令
+  //变量的值用volatile声明后
+  // 系统总是重他所在的内存读取数据, 而不会使用保存在寄存器中的数据
+  //多线程操作 确保 安全
+
 };
 }
 
-typedef detail::AtomicIntegerT<int32_t> AtomicInt32;
+typedef detail::AtomicIntegerT<int32_t> AtomicInt32; //模板类的 32 64两个实例化的整数类
 typedef detail::AtomicIntegerT<int64_t> AtomicInt64;
 }
 

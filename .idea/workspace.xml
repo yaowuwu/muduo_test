@@ -9,7 +9,20 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91e4a719-6f92-4d9a-b27e-4e5fe6d86f21" name="Default Changelist" comment="" />
+    <list default="true" id="91e4a719-6f92-4d9a-b27e-4e5fe6d86f21" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/10/jmuduo/muduo/base/tests/Timestamp_unittest.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/10/jmuduo/muduo/base/tests/Timestamp_unittest.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/11/jmuduo/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/11/jmuduo/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/11/jmuduo/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/11/jmuduo/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/11/jmuduo/muduo/base/Atomic.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/11/jmuduo/muduo/base/Atomic.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/11/jmuduo/muduo/base/Types.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/11/jmuduo/muduo/base/Types.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/11/jmuduo/muduo/base/tests/Atomic_unittest.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/11/jmuduo/muduo/base/tests/Atomic_unittest.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/11/jmuduo/muduo/base/tests/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/11/jmuduo/muduo/base/tests/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/11/jmuduo/tests/bsa.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/11/jmuduo/tests/bsa.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/12/jmuduo/muduo/base/Exception.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/12/jmuduo/muduo/base/Exception.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/12/jmuduo/muduo/base/tests/Exception_test.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/12/jmuduo/muduo/base/tests/Exception_test.cc" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +30,9 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Vpe97OTY5HZdJ1JTb4qtXsV9qv" />
   <component name="ProjectViewState">
@@ -26,6 +42,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="ServiceViewManager">
@@ -53,10 +70,17 @@
       <workItem from="1577954311546" duration="2907000" />
       <workItem from="1578449175486" duration="621000" />
       <workItem from="1578469564141" duration="2647000" />
+      <workItem from="1579165141550" duration="3867000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1602" y="520" key="com.intellij.ide.util.TipDialog" timestamp="1579165142868">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1602" y="520" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579165142868" />
   </component>
 </project>

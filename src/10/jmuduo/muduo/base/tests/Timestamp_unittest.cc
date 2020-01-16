@@ -42,7 +42,7 @@ void benchmark()
     {
       printf("reverse!\n");
     }
-    else if (inc < 100)
+    else if (inc < 100)//小于100的差 的分别(1,2,3,4,5,6...100)个数
     {
       ++increments[inc];
     }

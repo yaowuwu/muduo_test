@@ -3,6 +3,10 @@
 //
 // Author: Shuo Chen (chenshuo at chenshuo dot com)
 
+//backtrace 栈回溯, 保存各个栈帧的地址
+//backtrace_symbols 根据地址,转成相应的函数符号
+//abi: __cxa_dmangle
+
 #ifndef MUDUO_BASE_EXCEPTION_H
 #define MUDUO_BASE_EXCEPTION_H
 
