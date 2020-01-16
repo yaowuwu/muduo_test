@@ -19,9 +19,14 @@ namespace muduo
 //copyablbe 空基类,标识类, 值类型, 凡是值类型 --> 可以拷贝
 //对象有两种类型:
 //值语义: 可以拷贝, 拷贝后, 与原对象脱离关系
-//对象语义:
+//对象语义:要么是不能拷贝,(对象语义 渣男行为)
+// 要么能拷贝, 但拷贝后与原对象仍然存在一定的关系,比如共享底层资源(要实现自己的拷贝构造函数)
+//muduo库中大部分都是不能拷贝的, 只有少部分可以,timestamp就是其中之一
 class Timestamp : public muduo::copyable,
                   public boost::less_than_comparable<Timestamp>
+                          //boost库中的类模板 实例化出来的一个模板类TimeStamp
+                          // 该类模板的作用:less_than_comparable
+                          //要求实现< , 可自动实现>, <= , >=
 {
  public:
   ///
@@ -61,7 +66,7 @@ class Timestamp : public muduo::copyable,
   static Timestamp now();
   static Timestamp invalid();
 
-  static const int kMicroSecondsPerSecond = 1000 * 1000;
+  static const int kMicroSecondsPerSecond = 1000 * 1000; //100 0000
 
  private:
   int64_t microSecondsSinceEpoch_;

@@ -11,6 +11,8 @@
 using namespace muduo;
 
 BOOST_STATIC_ASSERT(sizeof(Timestamp) == sizeof(int64_t));
+//编译时断言
+//而我们平时用的assert是运行时断言
 
 Timestamp::Timestamp(int64_t microseconds)
   : microSecondsSinceEpoch_(microseconds)
@@ -26,13 +28,25 @@ string Timestamp::toString() const
   return buf;
 }
 
+//int64_t 用来表示64位整数 在32位系统中是long long int
+//                         在64位系统中是long int
+//printf("%ld",value);  //64bit OS
+//printf("%lld",value); //32bit OS
+
+//跨平台的做法  PRId64 == 字符串
+//#define __STDC_FORMAT_MACROS
+//#include <inttypes.h>
+//#undef __STDC_FORMAT_MACROS
+// printf("%"PRId64"\n", value);
+
+
 string Timestamp::toFormattedString() const
 {
   char buf[32] = {0};
   time_t seconds = static_cast<time_t>(microSecondsSinceEpoch_ / kMicroSecondsPerSecond);
   int microseconds = static_cast<int>(microSecondsSinceEpoch_ % kMicroSecondsPerSecond);
   struct tm tm_time;
-  gmtime_r(&seconds, &tm_time);
+  gmtime_r(&seconds, &tm_time);//_r表示线程安全 将 秒数 转换为 结构体
 
   snprintf(buf, sizeof(buf), "%4d%02d%02d %02d:%02d:%02d.%06d",
       tm_time.tm_year + 1900, tm_time.tm_mon + 1, tm_time.tm_mday,
