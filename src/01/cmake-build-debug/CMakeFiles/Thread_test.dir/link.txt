@@ -1,3 +1,0 @@
-"D:\Program Files\JetBrains\CLion 2019.3.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Thread_test.dir/objects.a
-D:\mingw64\bin\ar.exe cr CMakeFiles\Thread_test.dir/objects.a @CMakeFiles\Thread_test.dir\objects1.rsp
-g++ -g   -Wl,--whole-archive CMakeFiles\Thread_test.dir/objects.a -Wl,--no-whole-archive  -o bin\Thread_test.exe -Wl,--out-implib,bin\libThread_test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Thread_test.dir\linklibs.rsp
