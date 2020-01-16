@@ -1,0 +1,50 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /root/test/muduo_test/src/10/jmuduo/build/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_0b7a1/fast 
+/usr/bin/gmake -f CMakeFiles/cmTC_0b7a1.dir/build.make CMakeFiles/cmTC_0b7a1.dir/build
+gmake[1]: Entering directory `/root/test/muduo_test/src/10/jmuduo/build/debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0b7a1.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -g -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Werror -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -rdynamic    -o CMakeFiles/cmTC_0b7a1.dir/CheckSymbolExists.cxx.o -c /root/test/muduo_test/src/10/jmuduo/build/debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/root/test/muduo_test/src/10/jmuduo/build/debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/root/test/muduo_test/src/10/jmuduo/build/debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:33: error: use of old-style cast [-Werror=old-style-cast]
+   return ((int*)(&pthread_create))[argc];
+                                 ^
+cc1plus: all warnings being treated as errors
+gmake[1]: *** [CMakeFiles/cmTC_0b7a1.dir/CheckSymbolExists.cxx.o] Error 1
+gmake[1]: Leaving directory `/root/test/muduo_test/src/10/jmuduo/build/debug/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_0b7a1/fast] Error 2
+
+File /root/test/muduo_test/src/10/jmuduo/build/debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /root/test/muduo_test/src/10/jmuduo/build/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_922bf/fast 
+/usr/bin/gmake -f CMakeFiles/cmTC_922bf.dir/build.make CMakeFiles/cmTC_922bf.dir/build
+gmake[1]: Entering directory `/root/test/muduo_test/src/10/jmuduo/build/debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_922bf.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -g -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Werror -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -rdynamic -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_922bf.dir/CheckFunctionExists.cxx.o -c /root/test/muduo_test/src/10/jmuduo/build/debug/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_922bf
+/usr/local/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_922bf.dir/link.txt --verbose=1
+/usr/bin/c++  -g -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Werror -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -rdynamic -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_922bf.dir/CheckFunctionExists.cxx.o  -o cmTC_922bf -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_922bf] Error 1
+gmake[1]: Leaving directory `/root/test/muduo_test/src/10/jmuduo/build/debug/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_922bf/fast] Error 2
+
+
