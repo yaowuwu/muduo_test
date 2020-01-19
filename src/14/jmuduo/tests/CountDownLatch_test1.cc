@@ -58,6 +58,7 @@ class Test
 int main()
 {
   printf("pid=%d, tid=%d\n", ::getpid(), CurrentThread::tid());
+  //打印当前进程,当前线程
   Test t(3);
   sleep(3);
   printf("pid=%d, tid=%d %s running ...\n", ::getpid(), CurrentThread::tid(), CurrentThread::name());

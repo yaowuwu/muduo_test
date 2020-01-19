@@ -31,9 +31,9 @@ void CountDownLatch::countDown()
   }
 }
 
-int CountDownLatch::getCount() const
+int CountDownLatch::getCount() const //const成员函数不能改变数据成员的状态,
 {
-  MutexLockGuard lock(mutex_);
+  MutexLockGuard lock(mutex_);//但这里改变了lock(mutex_),状态,原因是mutable关键字
   return count_;
 }
 

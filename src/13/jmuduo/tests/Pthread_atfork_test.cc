@@ -31,3 +31,9 @@ int main(void)
 
 	return 0;
 }
+
+
+//#include<pthread.h>
+//int pthread_atfork(void(*prepare)(void), void(*parent)(void), void(*child)(void);
+//调用fork时,内部创建子进程前  在父进程中会调用prepare,
+//内部创建子进程成功后, 父进程会调用parent,子进程会调用child

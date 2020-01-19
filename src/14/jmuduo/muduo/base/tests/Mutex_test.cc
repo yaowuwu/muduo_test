@@ -19,7 +19,7 @@ void threadFunc()
 {
   for (int i = 0; i < kCount; ++i)
   {
-    MutexLockGuard lock(g_mutex);
+    MutexLockGuard lock(g_mutex);//在构造函数中加锁,在析构函数中解锁
     g_vec.push_back(i);
   }
 }
@@ -27,7 +27,7 @@ void threadFunc()
 int main()
 {
   const int kMaxThreads = 8;
-  g_vec.reserve(kMaxThreads * kCount);
+  g_vec.reserve(kMaxThreads * kCount);//8000万个字节数,有300多M,
 
   Timestamp start(Timestamp::now());
   for (int i = 0; i < kCount; ++i)
@@ -58,4 +58,4 @@ int main()
     printf("%d thread(s) with lock %f\n", nthreads, timeDifference(Timestamp::now(), start));
   }
 }
-
+//1, 2,3,4,5,6,7个线程共同争锁所用时间消耗.

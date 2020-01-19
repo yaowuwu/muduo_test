@@ -26,7 +26,7 @@ class MutexLock : boost::noncopyable
 
   ~MutexLock()
   {
-    assert(holder_ == 0);
+    assert(holder_ == 0); //断言该锁没有被利用,再销毁该锁
     int ret = pthread_mutex_destroy(&mutex_);
     assert(ret == 0); (void) ret;
   }
@@ -66,11 +66,14 @@ class MutexLock : boost::noncopyable
   pid_t holder_;
 };
 
+
+//使用RAII技法 封装 资源获取及初始化
 class MutexLockGuard : boost::noncopyable
 {
  public:
-  explicit MutexLockGuard(MutexLock& mutex)
-    : mutex_(mutex)
+  explicit MutexLockGuard(MutexLock& mutex) //在构造函数中获取资源,即调用mutex的lock
+    : mutex_(mutex)    //避免提前退出忘记解锁,在提前退出时,MutexGuard的生命周期结束,
+                       // 会自动调用析构函数,进行解锁
   {
     mutex_.lock();
   }
@@ -82,7 +85,7 @@ class MutexLockGuard : boost::noncopyable
 
  private:
 
-  MutexLock& mutex_;
+  MutexLock& mutex_; //引用传进来,Guard并不管理mutex_的生存期, 也不负责销毁mutex_ 两者仅仅是关联
 };
 
 }
@@ -91,5 +94,6 @@ class MutexLockGuard : boost::noncopyable
 // MutexLockGuard(mutex_);
 // A tempory object doesn't hold the lock for long!
 #define MutexLockGuard(x) error "Missing guard object name"
+//不允许匿名构造一个lock,
 
 #endif  // MUDUO_BASE_MUTEX_H

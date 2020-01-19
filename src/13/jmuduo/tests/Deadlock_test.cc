@@ -23,7 +23,7 @@ pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 void* doit(void* arg)
 {
 	printf("pid = %d begin doit ...\n",static_cast<int>(getpid()));
-	pthread_mutex_lock(&mutex);
+	pthread_mutex_lock(&mutex);  //父进程创建一个子进程，在子进程中调用doit，由于子进程会复制父进程的内存，这时候mutex处于锁的状态，
 	struct timespec ts = {2, 0};
 	nanosleep(&ts, NULL);
 	pthread_mutex_unlock(&mutex);
@@ -36,9 +36,9 @@ int main(void)
 {
 	printf("pid = %d Entering main ...\n", static_cast<int>(getpid()));
 	pthread_t tid;
-	pthread_create(&tid, NULL, doit, NULL);
+	pthread_create(&tid, NULL, doit, NULL); //父进程在创建了一个线程，并对mutex加锁，
 	struct timespec ts = {1, 0};
-	nanosleep(&ts, NULL);
+	nanosleep(&ts, NULL);  //等待1秒
 	if (fork() == 0)
 	{
 		doit(NULL);

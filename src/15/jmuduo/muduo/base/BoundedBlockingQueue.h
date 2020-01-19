@@ -9,7 +9,7 @@
 #include <muduo/base/Condition.h>
 #include <muduo/base/Mutex.h>
 
-#include <boost/circular_buffer.hpp>
+#include <boost/circular_buffer.hpp>//环形缓冲区
 #include <boost/noncopyable.hpp>
 #include <assert.h>
 

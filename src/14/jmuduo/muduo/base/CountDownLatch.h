@@ -27,10 +27,13 @@ class CountDownLatch : boost::noncopyable
   int getCount() const;
 
  private:
-  mutable MutexLock mutex_;
+  mutable MutexLock mutex_; //mutable  可变的
   Condition condition_;
   int count_;
 };
 
 }
 #endif  // MUDUO_BASE_COUNTDOWNLATCH_H
+
+//既可以用于所有子线程等待主线程发起"起跑"
+//也可以用于主线程等待子线程初始化完毕才开始工作

@@ -58,7 +58,7 @@ void Exception::fillStackTrace()
 }
 
 
-//名字还原 
+//名字还原
 string Exception::demangle(const char* symbol)
 {
   size_t size;
