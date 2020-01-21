@@ -37,6 +37,25 @@
 //
 // Arghh!  I wish C++ literals were automatically of type "string".
 
+//用以实现高效的字符串传递
+//void foo(const StringPiece& x);
+//这里既可以用 const char* 也可以用 std::string类型作为参数
+//并且这里不涉及内存拷贝
+
+//const char* s1;
+//std::string s2;
+//
+//void foo(const StringPiece& x);
+//
+//s2.c_str()
+//void foo(const char* x);
+//
+//s1
+//s2
+//void foo(const std::string& x);
+//但char* -> string 内存拷贝, 效率低一点
+
+
 #ifndef MUDUO_BASE_STRINGPIECE_H
 #define MUDUO_BASE_STRINGPIECE_H
 

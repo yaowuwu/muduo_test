@@ -4,6 +4,34 @@
 #include <muduo/base/LogStream.h>
 #include <muduo/base/Timestamp.h>
 
+//Logger => Impl => LogStream => operator<<FixedBuffer => g_output => g_flush
+//stream()
+
+//#define LOG_INFO if (muduo::Logger::logLevel() <= muduo::Logger::INFO) \
+//muduo::Logger(__FILE__,__LINE__).stream()
+//LOG_INFO << "info..."; 使用方式
+//muduo::Logger(__FILE__,__LINE__).stream()<<"info";
+//构造无名Logger对象, Logger再调用stream()函数, 返回一个LogSreeam对象,
+//再通过LogStream对象调用插入符 << 来 到 FixedBuffer缓冲区之中
+//Logger的成员对象Impl类,负责格式化
+//什么时候将缓冲区 到 日志所对应的设备?
+//日志所对应的设备:1 标准输出, 2, 日志文件
+//由于Logger是无名对象,再语句执行完后就会自动调用析构函数销毁,
+//所以在析构函数中输出 ,调用g_output, g_flush
+
+//memset(buf,0, sizeof(buf));
+// == bzero(buf , sizeof(buf));
+
+//k开头的一般是一个常量, 谷歌编程规范
+
+//LogFile
+//日志滚动条件
+//  文件大小(例如每写满1G换下一个文件)
+//  时间(每天零点新建一个日志文件,不论前一个文件是否写满)
+//一个典型的日志文件名
+//logfile_test.20130311-115604.popo.7743.log
+
+
 namespace muduo
 {
 

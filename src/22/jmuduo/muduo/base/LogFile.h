@@ -38,7 +38,7 @@ class LogFile : boost::noncopyable
   time_t startOfPeriod_;	// 开始记录日志时间（调整至零点的时间）
   time_t lastRoll_;			// 上一次滚动日志文件时间
   time_t lastFlush_;		// 上一次日志写入文件时间
-  class File;
+  class File;//嵌套类,前向声明
   boost::scoped_ptr<File> file_;
 
   const static int kCheckTimeRoll_ = 1024;

@@ -187,3 +187,19 @@ string LogFile::getLogFileName(const string& basename, time_t* now)
   return filename;
 }
 
+//I/O总线 能不能并行
+//多个线程同时对同一个文件 进行写入, 效率可能不如单个线程对同一个文件写入效率高
+//
+//异步日志
+//原理:
+//多个线程->单个线程->写入日志
+
+//异步IO   DAM特性,
+//
+//与非阻塞O_NONBLOCK 的区别
+//read 同步IO  忙等待     read需要一直循环等待IO完成
+//
+//与IO复用的区别
+//read  IO完成仅仅是通知应用 完成, 还需要主动把数据 从 内核取出至应用
+//
+//multiple reactors + thread pool (one loop per thread + threadpool)(突发性IO与密集计算)
